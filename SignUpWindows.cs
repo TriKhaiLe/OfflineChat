@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,12 @@ namespace BaiThucHanh1
     public partial class SignUpWindows : Form
     {
         private string avatarPath = "";
+        Color signupButtonColor = ColorTranslator.FromHtml("#1877f2"); // Chuyển đổi mã màu hex sang Color
 
         public SignUpWindows()
         {
             InitializeComponent();
             Region = Region.FromHrgn(CustomFormManager.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-
             avatarPath = FilePathManager.GetFilePath("images") + "defaultAvatar.png";
             ptbAvatar.Image = Image.FromFile(avatarPath);
         }
@@ -65,6 +66,40 @@ namespace BaiThucHanh1
         {
             Close();
         }
+
+        private void SignUpWindows_Load(object sender, EventArgs e)
+        {
+            btnSignup.BackColor = signupButtonColor;
+            btnAvatar.BackColor = signupButtonColor;
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            switch (CustomFormManager.CurrentLanguage)
+            {
+                case "English":
+                    btnSignup.Text = "Sign Up";
+                    btnAvatar.Text = "Choose your avatar";
+                    tbName.PlaceholderText = "Your Full Name";
+                    tbEmail.PlaceholderText = "Email";
+                    tbPass.PlaceholderText = "Password";
+                    lbTitle.Text = "Sign Up";
+                    break;
+
+                case "Tiếng Việt":
+                    btnSignup.Text = "Đăng ký";
+                    btnAvatar.Text = "Chọn ảnh đại diện";
+                    tbName.PlaceholderText = "Họ và tên";
+                    tbEmail.PlaceholderText = "Email";
+                    tbPass.PlaceholderText = "Mật khẩu";
+                    lbTitle.Text = "Đăng ký";
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
 

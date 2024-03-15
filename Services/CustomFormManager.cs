@@ -21,7 +21,7 @@ namespace BaiThucHanh1.Services
     int nHeightEllipse // height of ellipse
 );
 
-        public static CultureInfo CurrentLanguage { get; set; } = CultureInfo.CurrentCulture;
+        public static string CurrentLanguage { get; set; } = "English";
 
 
     }

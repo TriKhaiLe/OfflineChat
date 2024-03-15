@@ -32,68 +32,89 @@
             this.ptbAvatar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbTitle = new System.Windows.Forms.Label();
-            this.roundedButton1 = new BaiThucHanh1.UserControls.RoundedButton();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.btnAvatar = new BaiThucHanh1.UserControls.RoundedButton();
             this.btnSignup = new BaiThucHanh1.UserControls.RoundedButton();
             this.tbName = new BaiThucHanh1.UserControls.RoundedTb();
             this.tbPass = new BaiThucHanh1.UserControls.RoundedTb();
             this.tbEmail = new BaiThucHanh1.UserControls.RoundedTb();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ptbAvatar
             // 
-            resources.ApplyResources(this.ptbAvatar, "ptbAvatar");
+            this.ptbAvatar.Location = new System.Drawing.Point(153, 72);
             this.ptbAvatar.Name = "ptbAvatar";
+            this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbAvatar.TabIndex = 9;
             this.ptbAvatar.TabStop = false;
             this.ptbAvatar.Click += new System.EventHandler(this.ptbAvatar_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(327, 12);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            resources.ApplyResources(this.label2, "label2");
+            this.label2.Location = new System.Drawing.Point(14, 61);
             this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(348, 3);
+            this.label2.TabIndex = 30;
             // 
-            // tbTitle
+            // lbTitle
             // 
-            resources.ApplyResources(this.tbTitle, "tbTitle");
-            this.tbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.tbTitle.Name = "tbTitle";
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lbTitle.Location = new System.Drawing.Point(12, 23);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(83, 24);
+            this.lbTitle.TabIndex = 31;
+            this.lbTitle.Text = "Signup";
             // 
-            // roundedButton1
+            // btnAvatar
             // 
-            this.roundedButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.roundedButton1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.roundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundedButton1.BorderRadius = 8;
-            this.roundedButton1.BorderSize = 0;
-            resources.ApplyResources(this.roundedButton1, "roundedButton1");
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.TextColor = System.Drawing.Color.White;
-            this.roundedButton1.UseVisualStyleBackColor = false;
-            this.roundedButton1.Click += new System.EventHandler(this.ptbAvatar_Click);
+            this.btnAvatar.BackColor = System.Drawing.Color.Blue;
+            this.btnAvatar.BackgroundColor = System.Drawing.Color.Blue;
+            this.btnAvatar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAvatar.BorderRadius = 8;
+            this.btnAvatar.BorderSize = 0;
+            this.btnAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvatar.ForeColor = System.Drawing.Color.White;
+            this.btnAvatar.Location = new System.Drawing.Point(117, 151);
+            this.btnAvatar.Name = "btnAvatar";
+            this.btnAvatar.Size = new System.Drawing.Size(147, 31);
+            this.btnAvatar.TabIndex = 1;
+            this.btnAvatar.Text = "Choose your avatar";
+            this.btnAvatar.TextColor = System.Drawing.Color.White;
+            this.btnAvatar.UseVisualStyleBackColor = false;
+            this.btnAvatar.Click += new System.EventHandler(this.ptbAvatar_Click);
             // 
             // btnSignup
             // 
-            this.btnSignup.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSignup.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSignup.BackColor = System.Drawing.Color.Blue;
+            this.btnSignup.BackgroundColor = System.Drawing.Color.Blue;
             this.btnSignup.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnSignup.BorderRadius = 8;
             this.btnSignup.BorderSize = 0;
-            resources.ApplyResources(this.btnSignup, "btnSignup");
+            this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignup.ForeColor = System.Drawing.Color.White;
+            this.btnSignup.Location = new System.Drawing.Point(83, 414);
             this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(212, 53);
+            this.btnSignup.TabIndex = 32;
+            this.btnSignup.Text = "roundedButton1";
             this.btnSignup.TextColor = System.Drawing.Color.White;
             this.btnSignup.UseVisualStyleBackColor = false;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
@@ -105,13 +126,18 @@
             this.tbName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.tbName.BorderRadius = 8;
             this.tbName.BorderSize = 1;
-            resources.ApplyResources(this.tbName, "tbName");
+            this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbName.Location = new System.Drawing.Point(13, 210);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Multiline = false;
             this.tbName.Name = "tbName";
+            this.tbName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbName.PasswordChar = false;
             this.tbName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbName.PlaceholderText = "Full Name";
+            this.tbName.Size = new System.Drawing.Size(348, 35);
+            this.tbName.TabIndex = 29;
             this.tbName.Texts = "";
             this.tbName.UnderlinedStyle = false;
             // 
@@ -122,13 +148,18 @@
             this.tbPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.tbPass.BorderRadius = 8;
             this.tbPass.BorderSize = 1;
-            resources.ApplyResources(this.tbPass, "tbPass");
+            this.tbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.tbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbPass.Location = new System.Drawing.Point(13, 333);
+            this.tbPass.Margin = new System.Windows.Forms.Padding(4);
             this.tbPass.Multiline = false;
             this.tbPass.Name = "tbPass";
+            this.tbPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbPass.PasswordChar = true;
             this.tbPass.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbPass.PlaceholderText = "Password";
+            this.tbPass.Size = new System.Drawing.Size(348, 35);
+            this.tbPass.TabIndex = 31;
             this.tbPass.Texts = "";
             this.tbPass.UnderlinedStyle = false;
             // 
@@ -139,33 +170,31 @@
             this.tbEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.tbEmail.BorderRadius = 8;
             this.tbEmail.BorderSize = 1;
-            resources.ApplyResources(this.tbEmail, "tbEmail");
+            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.tbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbEmail.Location = new System.Drawing.Point(13, 272);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Multiline = false;
             this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.tbEmail.PasswordChar = false;
             this.tbEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tbEmail.PlaceholderText = "Email";
+            this.tbEmail.Size = new System.Drawing.Size(348, 35);
+            this.tbEmail.TabIndex = 30;
             this.tbEmail.Texts = "";
             this.tbEmail.UnderlinedStyle = false;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Name = "comboBox1";
-            // 
             // SignUpWindows
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(374, 513);
             this.Controls.Add(this.tbEmail);
-            this.Controls.Add(this.roundedButton1);
+            this.Controls.Add(this.btnAvatar);
             this.Controls.Add(this.btnSignup);
-            this.Controls.Add(this.tbTitle);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbPass);
@@ -173,7 +202,10 @@
             this.Controls.Add(this.ptbAvatar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SignUpWindows";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SignUp";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignUpWindows_FormClosing);
+            this.Load += new System.EventHandler(this.SignUpWindows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -187,10 +219,9 @@
         private UserControls.RoundedTb tbPass;
         private UserControls.RoundedTb tbName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label tbTitle;
+        private System.Windows.Forms.Label lbTitle;
         private UserControls.RoundedButton btnSignup;
-        private UserControls.RoundedButton roundedButton1;
+        private UserControls.RoundedButton btnAvatar;
         private UserControls.RoundedTb tbEmail;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
