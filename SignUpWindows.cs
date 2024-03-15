@@ -56,12 +56,6 @@ namespace BaiThucHanh1
             this.Close();
         }
 
-        private void SignUpWindows_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Application.Exit();
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Close();

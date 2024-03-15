@@ -204,7 +204,6 @@
             this.Name = "SignUpWindows";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SignUpWindows_FormClosing);
             this.Load += new System.EventHandler(this.SignUpWindows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -30,7 +30,7 @@
         {
             this.ptbAvatar = new System.Windows.Forms.PictureBox();
             this.lbAvatar = new System.Windows.Forms.Label();
-            this.lbPass = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbHoten = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
@@ -41,6 +41,7 @@
             this.ptbAvatar.Location = new System.Drawing.Point(305, 163);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(87, 70);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbAvatar.TabIndex = 14;
             this.ptbAvatar.TabStop = false;
             // 
@@ -53,14 +54,14 @@
             this.lbAvatar.TabIndex = 13;
             this.lbAvatar.Text = "Avatar";
             // 
-            // lbPass
+            // lbStatus
             // 
-            this.lbPass.AutoSize = true;
-            this.lbPass.Location = new System.Drawing.Point(450, 311);
-            this.lbPass.Name = "lbPass";
-            this.lbPass.Size = new System.Drawing.Size(25, 16);
-            this.lbPass.TabIndex = 12;
-            this.lbPass.Text = "mk";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(450, 311);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(25, 16);
+            this.lbStatus.TabIndex = 12;
+            this.lbStatus.Text = "mk";
             // 
             // lbEmail
             // 
@@ -87,13 +88,14 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ptbAvatar);
             this.Controls.Add(this.lbAvatar);
-            this.Controls.Add(this.lbPass);
+            this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbHoten);
             this.Name = "ChatWindows";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChatWindows";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatWindows_FormClosing);
+            this.Load += new System.EventHandler(this.ChatWindows_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -104,7 +106,7 @@
 
         private System.Windows.Forms.PictureBox ptbAvatar;
         private System.Windows.Forms.Label lbAvatar;
-        private System.Windows.Forms.Label lbPass;
+        private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbHoten;
     }

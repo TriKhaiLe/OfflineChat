@@ -45,6 +45,13 @@ namespace BaiThucHanh1.Services
             return users.Any(u => u.Email == email && u.Password == password);
         }
 
+        // login user
+        public static User Login(string email, string password)
+        {
+            List<User> users = LoadUsersFromFile();
+            return users.FirstOrDefault(u => u.Email == email && u.Password == password);
+        }
+
         // check email exists
         public static bool IsEmailExists(string email)
         {

@@ -1,4 +1,5 @@
-﻿using BaiThucHanh1.Services;
+﻿using BaiThucHanh1.Models;
+using BaiThucHanh1.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,21 +31,33 @@ namespace BaiThucHanh1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = tbEmail.Text;
-            string password = tbPass.Text;
-            Services.UserServices.LoadUsersFromFile();
+            string email = tbEmail.Texts;
+            string password = tbPass.Texts;
 
-            // Example method to check if user exists
-            if (Services.UserServices.IsUserExists(email, password))
+            //// Example method to check if user exists
+            //if (Services.UserServices.IsUserExists(email, password))
+            //{
+            //    Hide();
+            //    ChatWindows homeWindows = new ChatWindows();
+            //    homeWindows.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid email or password");
+            //}
+
+            User user = UserServices.Login(email, password);
+            if (user != null)
             {
                 Hide();
-                ChatWindows homeWindows = new ChatWindows();
+                ChatWindows homeWindows = new ChatWindows(user);
                 homeWindows.Show();
             }
             else
             {
                 MessageBox.Show("Invalid email or password");
             }
+
         }
 
         private void LogInWindows_FormClosing(object sender, FormClosingEventArgs e)

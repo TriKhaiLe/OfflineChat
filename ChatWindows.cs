@@ -15,36 +15,23 @@ namespace BaiThucHanh1
 {
     public partial class ChatWindows : Form
     {
-        private List<User> users = new List<User>();
-        private string filePath = "users.json";
-        private string avatarPath = "";
-
-        public ChatWindows()
+        User loggedUser = new User();
+        public ChatWindows(User user)
         {
             InitializeComponent();
-        }
-        private void GetAllUsers()
-        {
-            users = LoadFromFile();
-            foreach (User user in users)
-            {
-                lbHoten.Text = user.FullName;
-            }
-        }
-
-        private List<User> LoadFromFile()
-        {
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<List<User>>(json);
-            }
-            return new List<User>();
+            loggedUser = user;
         }
 
         private void ChatWindows_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void ChatWindows_Load(object sender, EventArgs e)
+        {
+            lbStatus.Text = loggedUser.Status.ToString();
+            ptbAvatar.Image = Image.FromFile(loggedUser.PathToAvatar);
 
         }
     }
