@@ -34,5 +34,7 @@ namespace BaiThucHanh1
             ptbAvatar.Image = Image.FromFile(loggedUser.PathToAvatar);
 
         }
+
+
     }
 }
