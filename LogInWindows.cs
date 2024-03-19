@@ -146,5 +146,11 @@ namespace BaiThucHanh1
             e.Graphics.FillRectangle(brush, ClientRectangle);
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgottenPasswordWindows forgottenPasswordWindows = new ForgottenPasswordWindows();
+            forgottenPasswordWindows.ShowDialog();
+        }
     }
 }

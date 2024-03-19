@@ -55,6 +55,18 @@
     <Compile Include="ChatWindows.Designer.cs">
       <DependentUpon>ChatWindows.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmNewPasswordWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmNewPasswordWindows.Designer.cs">
+      <DependentUpon>ConfirmNewPasswordWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgottenPasswordWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgottenPasswordWindows.Designer.cs">
+      <DependentUpon>ForgottenPasswordWindows.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +115,20 @@
     <Compile Include="UserControls\UserControlUser.Designer.cs">
       <DependentUpon>UserControlUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserDisplay.Designer.cs">
+      <DependentUpon>UserDisplay.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChatWindows.resx">
       <DependentUpon>ChatWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmNewPasswordWindows.resx">
+      <DependentUpon>ConfirmNewPasswordWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgottenPasswordWindows.resx">
+      <DependentUpon>ForgottenPasswordWindows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -140,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControlUser.resx">
       <DependentUpon>UserControlUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserDisplay.resx">
+      <DependentUpon>UserDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

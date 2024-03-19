@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpWindows));
-            this.ptbAvatar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnAvatar = new BaiThucHanh1.UserControls.RoundedButton();
@@ -38,31 +36,12 @@
             this.tbName = new BaiThucHanh1.UserControls.RoundedTb();
             this.tbPass = new BaiThucHanh1.UserControls.RoundedTb();
             this.tbEmail = new BaiThucHanh1.UserControls.RoundedTb();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbAvatar = new System.Windows.Forms.PictureBox();
+            this.llLogin = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ptbAvatar
-            // 
-            this.ptbAvatar.Location = new System.Drawing.Point(153, 72);
-            this.ptbAvatar.Name = "ptbAvatar";
-            this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
-            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ptbAvatar.TabIndex = 9;
-            this.ptbAvatar.TabStop = false;
-            this.ptbAvatar.Click += new System.EventHandler(this.ptbAvatar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(327, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -110,7 +89,7 @@
             this.btnSignup.BorderSize = 0;
             this.btnSignup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignup.ForeColor = System.Drawing.Color.White;
-            this.btnSignup.Location = new System.Drawing.Point(83, 414);
+            this.btnSignup.Location = new System.Drawing.Point(83, 390);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(212, 53);
             this.btnSignup.TabIndex = 32;
@@ -128,7 +107,7 @@
             this.tbName.BorderSize = 1;
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.tbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbName.Location = new System.Drawing.Point(13, 210);
+            this.tbName.Location = new System.Drawing.Point(13, 206);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Multiline = false;
             this.tbName.Name = "tbName";
@@ -150,7 +129,7 @@
             this.tbPass.BorderSize = 1;
             this.tbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.tbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbPass.Location = new System.Drawing.Point(13, 333);
+            this.tbPass.Location = new System.Drawing.Point(13, 329);
             this.tbPass.Margin = new System.Windows.Forms.Padding(4);
             this.tbPass.Multiline = false;
             this.tbPass.Name = "tbPass";
@@ -172,7 +151,7 @@
             this.tbEmail.BorderSize = 1;
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.tbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbEmail.Location = new System.Drawing.Point(13, 272);
+            this.tbEmail.Location = new System.Drawing.Point(13, 268);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Multiline = false;
             this.tbEmail.Name = "tbEmail";
@@ -185,12 +164,46 @@
             this.tbEmail.Texts = "";
             this.tbEmail.UnderlinedStyle = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(327, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // ptbAvatar
+            // 
+            this.ptbAvatar.Location = new System.Drawing.Point(153, 72);
+            this.ptbAvatar.Name = "ptbAvatar";
+            this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbAvatar.TabIndex = 9;
+            this.ptbAvatar.TabStop = false;
+            this.ptbAvatar.Click += new System.EventHandler(this.ptbAvatar_Click);
+            // 
+            // llLogin
+            // 
+            this.llLogin.AutoSize = true;
+            this.llLogin.Location = new System.Drawing.Point(150, 460);
+            this.llLogin.Name = "llLogin";
+            this.llLogin.Size = new System.Drawing.Size(72, 16);
+            this.llLogin.TabIndex = 33;
+            this.llLogin.TabStop = true;
+            this.llLogin.Text = "Đăng nhập";
+            this.llLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llLogin_LinkClicked);
+            // 
             // SignUpWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(374, 513);
+            this.Controls.Add(this.llLogin);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.btnAvatar);
             this.Controls.Add(this.btnSignup);
@@ -205,8 +218,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUp";
             this.Load += new System.EventHandler(this.SignUpWindows_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +235,6 @@
         private UserControls.RoundedButton btnSignup;
         private UserControls.RoundedButton btnAvatar;
         private UserControls.RoundedTb tbEmail;
+        private System.Windows.Forms.LinkLabel llLogin;
     }
 }

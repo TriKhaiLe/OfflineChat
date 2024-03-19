@@ -94,6 +94,12 @@ namespace BaiThucHanh1
             }
         }
 
+        private void llLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // show login form and close this form
+            Close();
+
+        }
     }
 }
 

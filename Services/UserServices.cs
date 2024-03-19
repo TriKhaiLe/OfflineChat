@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BaiThucHanh1.Services
 {
@@ -66,5 +67,20 @@ namespace BaiThucHanh1.Services
             return users.FirstOrDefault(u => u.Email == email);
         }
 
+        // update password by email
+        public static void UpdatePassword(string email, string newPassword)
+        {
+            List<User> users = LoadUsersFromFile();
+            User user = users.FirstOrDefault(u => u.Email == email);
+            if (user != null)
+            {
+                user.Password = newPassword;
+                SaveToFile(users, filePath);
+            }
+            else
+            {
+                MessageBox.Show("Email not found!");
+            }
+        }
     }
 }
