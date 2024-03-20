@@ -28,62 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbName = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.ptbStatus = new System.Windows.Forms.PictureBox();
+            this.ptbAvatar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "label1";
+            this.lbName.AutoSize = true;
+            this.lbName.Location = new System.Drawing.Point(76, 9);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(44, 16);
+            this.lbName.TabIndex = 17;
+            this.lbName.Text = "label1";
             // 
-            // label2
+            // lbStatus
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "label2";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(112, 41);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(44, 16);
+            this.lbStatus.TabIndex = 19;
+            this.lbStatus.Text = "label2";
             // 
-            // pictureBox2
+            // ptbStatus
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(76, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
+            this.ptbStatus.Location = new System.Drawing.Point(76, 34);
+            this.ptbStatus.Name = "ptbStatus";
+            this.ptbStatus.Size = new System.Drawing.Size(30, 30);
+            this.ptbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbStatus.TabIndex = 18;
+            this.ptbStatus.TabStop = false;
             // 
-            // pictureBox1
+            // ptbAvatar
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.ptbAvatar.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatar.Name = "ptbAvatar";
+            this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
+            this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbAvatar.TabIndex = 16;
+            this.ptbAvatar.TabStop = false;
             // 
             // UserDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.ptbStatus);
+            this.Controls.Add(this.lbName);
+            this.Controls.Add(this.ptbAvatar);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.Name = "UserDisplay";
             this.Size = new System.Drawing.Size(300, 70);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,9 +92,9 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox ptbAvatar;
+        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.PictureBox ptbStatus;
+        private System.Windows.Forms.Label lbStatus;
     }
 }

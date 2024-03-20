@@ -91,13 +91,10 @@
     <Compile Include="SignUpWindows.Designer.cs">
       <DependentUpon>SignUpWindows.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\RoundedBtn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\RoundedBtn.Designer.cs">
-      <DependentUpon>RoundedBtn.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\RoundedPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\RoundedTb.cs">
