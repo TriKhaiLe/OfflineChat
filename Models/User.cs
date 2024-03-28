@@ -17,7 +17,7 @@ namespace BaiThucHanh1.Models
             Busy
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string FullName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
@@ -26,21 +26,38 @@ namespace BaiThucHanh1.Models
 
         public User()
         {
+            Id = "0";
             Status = UserStatus.Online;
             FullName = "Unknown";
             Password = "Unknown";
             Email = "Unknown";
-            PathToAvatar = FilePathManager.GetFilePath("images") + "defaultAvatar.png";
+            PathToAvatar = FilePathManager.GetPath("images") + "defaultAvatar.png";
         }
 
         public User(string fullName, string password, string email, string pathToAvatar)
         {
+            GenerateId();
+
             FullName = fullName;
             Password = password;
             Email = email;
             PathToAvatar = pathToAvatar;
             Status = GetRandomStatus();
         }
+
+        private void GenerateId()
+        {
+            string day = DateTime.Now.Day.ToString();
+            string month = DateTime.Now.Month.ToString();
+            string year = DateTime.Now.Year.ToString();
+            string hour = DateTime.Now.Hour.ToString();
+            string minute = DateTime.Now.Minute.ToString();
+            string second = DateTime.Now.Second.ToString();
+            string millisecond = DateTime.Now.Millisecond.ToString();
+
+            Id = day + month + year + hour + minute + second + millisecond;
+        }
+
         private UserStatus GetRandomStatus()
         {
             Array values = Enum.GetValues(typeof(UserStatus));

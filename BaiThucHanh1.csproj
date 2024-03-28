@@ -79,9 +79,11 @@
     <Compile Include="LogInWindows.Designer.cs">
       <DependentUpon>LogInWindows.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChatContent.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ChatServices.cs" />
     <Compile Include="Services\CustomFormManager.cs" />
     <Compile Include="Services\FilePathManager.cs" />
     <Compile Include="Services\UserServices.cs" />
@@ -90,6 +92,21 @@
     </Compile>
     <Compile Include="SignUpWindows.Designer.cs">
       <DependentUpon>SignUpWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CircularPicturebox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\IconBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\IconBlock.Designer.cs">
+      <DependentUpon>IconBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MessageBlock.Designer.cs">
+      <DependentUpon>MessageBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RoundedButton.cs">
       <SubType>Component</SubType>
@@ -155,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="SignUpWindows.resx">
       <DependentUpon>SignUpWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MessageBlock.resx">
+      <DependentUpon>MessageBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RoundedTb.resx">
       <DependentUpon>RoundedTb.cs</DependentUpon>

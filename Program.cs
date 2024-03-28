@@ -18,8 +18,11 @@ namespace BaiThucHanh1
             Application.SetCompatibleTextRenderingDefault(false);
 
             // set up file paths
-            Services.FilePathManager.AddFilePath("users", $"{Environment.CurrentDirectory}\\Data\\users.json");
-            Services.FilePathManager.AddFilePath("images", $"{Environment.CurrentDirectory}\\Images\\");
+            Services.FilePathManager.AddPath("users", $"{Environment.CurrentDirectory}\\Data\\users.json");
+            Services.FilePathManager.AddPath("images", $"{Environment.CurrentDirectory}\\Images\\"); // avatar
+            Services.FilePathManager.AddPath("icons", $"{Environment.CurrentDirectory}\\Icons\\");
+            Services.FilePathManager.AddPath("media", $"{Environment.CurrentDirectory}\\Media\\"); // video and image from chat
+            Services.FilePathManager.AddPath("chatContent", $"{Environment.CurrentDirectory}\\ChatContent\\content.json");
 
             Application.Run(new LogInWindows());
         }

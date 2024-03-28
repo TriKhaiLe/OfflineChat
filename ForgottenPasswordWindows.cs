@@ -64,17 +64,10 @@ namespace BaiThucHanh1
             }
         }
 
-        private string GetOldPassword(string texts)
+        private string GetOldPassword(string email)
         {
-            User user = UserServices.GetUserByEmail(texts);
+            User user = UserServices.GetUserByEmail(email);
             return user.Password;
-        }
-
-        private string GenerateNewPassword()
-        {
-            // generate new password
-            string newPassword = Guid.NewGuid().ToString().Substring(0, 8);
-            return newPassword;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

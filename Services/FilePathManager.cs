@@ -10,7 +10,7 @@ namespace BaiThucHanh1.Services
     {
         private static Dictionary<string, string> filePaths = new Dictionary<string, string>();
 
-        public static void AddFilePath(string key, string path)
+        public static void AddPath(string key, string path)
         {
             if (!filePaths.ContainsKey(key))
                 filePaths.Add(key, path);
@@ -18,7 +18,7 @@ namespace BaiThucHanh1.Services
                 filePaths[key] = path;
         }
 
-        public static string GetFilePath(string key)
+        public static string GetPath(string key)
         {
             if (filePaths.ContainsKey(key))
                 return filePaths[key];

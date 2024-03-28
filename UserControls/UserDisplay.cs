@@ -14,16 +14,16 @@ namespace BaiThucHanh1.UserControls
 {
     public partial class UserDisplay : UserControl
     {
-        string email = "";
+        private string id = "0";
         public UserDisplay()
         {
             InitializeComponent();
         }
 
-        public string Email
+        public string Id
         {
-            get { return email; }
-            set { email = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         public string FullName
@@ -63,10 +63,10 @@ namespace BaiThucHanh1.UserControls
 
         }
 
-        internal void SetUserInfo(string email)
+        internal void SetUserInfo(string id)
         {
             // dùng email để lấy thông tin người dùng
-            User user = UserServices.GetUserByEmail(email);
+            User user = UserServices.GetUserById(id);
             FullName = user.FullName;
             UserStatus = user.Status.ToString();
             SetAvatar(user.PathToAvatar);

@@ -12,7 +12,7 @@ namespace BaiThucHanh1.Services
 {
     public static class UserServices
     {
-        public static string filePath = FilePathManager.GetFilePath("users");
+        public static string filePath = FilePathManager.GetPath("users");
 
         public static void SaveToFile(List<User> users, string filePath)
         {
@@ -65,6 +65,13 @@ namespace BaiThucHanh1.Services
         {
             List<User> users = LoadUsersFromFile();
             return users.FirstOrDefault(u => u.Email == email);
+        }
+
+        // get user by id
+        public static User GetUserById(string id)
+        {
+            List<User> users = LoadUsersFromFile();
+            return users.FirstOrDefault(u => u.Id == id);
         }
 
         // update password by email

@@ -24,7 +24,7 @@ namespace BaiThucHanh1
         {
             InitializeComponent();
             Region = Region.FromHrgn(CustomFormManager.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            avatarPath = FilePathManager.GetFilePath("images") + "defaultAvatar.png";
+            avatarPath = FilePathManager.GetPath("images") + "defaultAvatar.png";
             ptbAvatar.Image = Image.FromFile(avatarPath);
         }
 
