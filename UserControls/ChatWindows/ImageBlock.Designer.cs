@@ -1,6 +1,6 @@
-﻿namespace BaiThucHanh1.UserControls
+﻿namespace BaiThucHanh1.UserControls.ChatWindows
 {
-    partial class MessageBlock
+    partial class ImageBlock
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageBlock));
             this.ptbAvatar = new BaiThucHanh1.UserControls.CircularPicturebox();
-            this.tbMessage = new BaiThucHanh1.UserControls.RoundedTb();
+            this.ptbImage = new BaiThucHanh1.UserControls.RoundedPictureBox();
             this.lbTimeStamp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // ptbAvatar
@@ -47,52 +49,41 @@
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAvatar.TabIndex = 0;
+            this.ptbAvatar.TabIndex = 2;
             this.ptbAvatar.TabStop = false;
             // 
-            // tbMessage
+            // ptbImage
             // 
-            this.tbMessage.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tbMessage.BackColor = System.Drawing.Color.Linen;
-            this.tbMessage.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbMessage.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.tbMessage.BorderRadius = 8;
-            this.tbMessage.BorderSize = 1;
-            this.tbMessage.Enabled = false;
-            this.tbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbMessage.Location = new System.Drawing.Point(77, 6);
-            this.tbMessage.Margin = new System.Windows.Forms.Padding(4);
-            this.tbMessage.Multiline = true;
-            this.tbMessage.Name = "tbMessage";
-            this.tbMessage.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.tbMessage.PasswordChar = false;
-            this.tbMessage.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbMessage.PlaceholderText = "";
-            this.tbMessage.Size = new System.Drawing.Size(799, 53);
-            this.tbMessage.TabIndex = 1;
-            this.tbMessage.Texts = "";
-            this.tbMessage.UnderlinedStyle = false;
+            this.ptbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImage.CornerRadius = 10;
+            this.ptbImage.Image = ((System.Drawing.Image)(resources.GetObject("ptbImage.Image")));
+            this.ptbImage.Location = new System.Drawing.Point(76, 3);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(180, 180);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImage.TabIndex = 3;
+            this.ptbImage.TabStop = false;
             // 
             // lbTimeStamp
             // 
             this.lbTimeStamp.AutoSize = true;
-            this.lbTimeStamp.Location = new System.Drawing.Point(798, 75);
+            this.lbTimeStamp.Location = new System.Drawing.Point(769, 167);
             this.lbTimeStamp.Name = "lbTimeStamp";
             this.lbTimeStamp.Size = new System.Drawing.Size(78, 16);
-            this.lbTimeStamp.TabIndex = 2;
+            this.lbTimeStamp.TabIndex = 4;
             this.lbTimeStamp.Text = "24:24:24 AM";
             // 
-            // MessageBlock
+            // ImageBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbTimeStamp);
-            this.Controls.Add(this.tbMessage);
+            this.Controls.Add(this.ptbImage);
             this.Controls.Add(this.ptbAvatar);
-            this.Name = "MessageBlock";
-            this.Size = new System.Drawing.Size(880, 105);
+            this.Name = "ImageBlock";
+            this.Size = new System.Drawing.Size(850, 200);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,7 +92,7 @@
         #endregion
 
         private CircularPicturebox ptbAvatar;
-        private RoundedTb tbMessage;
+        private RoundedPictureBox ptbImage;
         private System.Windows.Forms.Label lbTimeStamp;
     }
 }

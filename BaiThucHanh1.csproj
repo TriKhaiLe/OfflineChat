@@ -93,19 +93,25 @@
     <Compile Include="SignUpWindows.Designer.cs">
       <DependentUpon>SignUpWindows.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ChatWindows\ImageBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChatWindows\ImageBlock.Designer.cs">
+      <DependentUpon>ImageBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CircularPicturebox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserControls\IconBlock.cs">
+    <Compile Include="UserControls\ChatWindows\IconBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\IconBlock.Designer.cs">
+    <Compile Include="UserControls\ChatWindows\IconBlock.Designer.cs">
       <DependentUpon>IconBlock.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MessageBlock.cs">
+    <Compile Include="UserControls\ChatWindows\MessageBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MessageBlock.Designer.cs">
+    <Compile Include="UserControls\ChatWindows\MessageBlock.Designer.cs">
       <DependentUpon>MessageBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RoundedButton.cs">
@@ -173,7 +179,13 @@
     <EmbeddedResource Include="SignUpWindows.resx">
       <DependentUpon>SignUpWindows.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MessageBlock.resx">
+    <EmbeddedResource Include="UserControls\ChatWindows\IconBlock.resx">
+      <DependentUpon>IconBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChatWindows\ImageBlock.resx">
+      <DependentUpon>ImageBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChatWindows\MessageBlock.resx">
       <DependentUpon>MessageBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RoundedTb.resx">

@@ -54,10 +54,10 @@ namespace BaiThucHanh1.UserControls
                     ptbStatus.Image = Image.FromFile("images/offline.png");
                     break;
                 case "Away":
-                    ptbStatus.Image = Image.FromFile("images/offline.png");
+                    ptbStatus.Image = Image.FromFile("images/away.png");
                     break;
                 case "Busy":
-                    ptbStatus.Image = Image.FromFile("images/offline.png");
+                    ptbStatus.Image = Image.FromFile("images/busy.png");
                     break;
             }
 

@@ -13,7 +13,8 @@ namespace BaiThucHanh1.Models
         public enum ContentTypeList
         {
             Text,
-            Media,
+            Image,
+            Video,
             Icon
         }
         public string ContentType { get; set; }
