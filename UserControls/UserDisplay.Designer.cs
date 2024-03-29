@@ -39,7 +39,7 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(76, 9);
+            this.lbName.Location = new System.Drawing.Point(96, 12);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(16, 16);
             this.lbName.TabIndex = 17;
@@ -48,7 +48,7 @@
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(112, 41);
+            this.lbStatus.Location = new System.Drawing.Point(132, 44);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(16, 16);
             this.lbStatus.TabIndex = 19;
@@ -56,7 +56,7 @@
             // 
             // ptbStatus
             // 
-            this.ptbStatus.Location = new System.Drawing.Point(76, 34);
+            this.ptbStatus.Location = new System.Drawing.Point(86, 37);
             this.ptbStatus.Name = "ptbStatus";
             this.ptbStatus.Size = new System.Drawing.Size(30, 30);
             this.ptbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -72,7 +72,7 @@
             this.ptbAvatar.BorderSize = 2;
             this.ptbAvatar.Dock = System.Windows.Forms.DockStyle.Left;
             this.ptbAvatar.GradientAngle = 50F;
-            this.ptbAvatar.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatar.Location = new System.Drawing.Point(10, 0);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +89,8 @@
             this.Controls.Add(this.lbName);
             this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.Name = "UserDisplay";
-            this.Size = new System.Drawing.Size(300, 70);
+            this.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Size = new System.Drawing.Size(290, 70);
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);

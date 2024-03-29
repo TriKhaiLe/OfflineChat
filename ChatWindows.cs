@@ -85,7 +85,7 @@ namespace BaiThucHanh1
         {
             LoadUsers();
             // Thêm xử lý sự kiện Click cho mỗi Control trong FlowLayoutPanel
-            foreach (Control control in flowLayoutPanel1.Controls)
+            foreach (Control control in flpFriendList.Controls)
             {
                 control.Click += UserControl_Click;
             }
@@ -190,7 +190,7 @@ namespace BaiThucHanh1
                 userDisplay.SetAvatar(user.PathToAvatar);
                 userDisplay.SetStatusImage(user.Status.ToString());
 
-                flowLayoutPanel1.Controls.Add(userDisplay);
+                flpFriendList.Controls.Add(userDisplay);
             }
         }
 

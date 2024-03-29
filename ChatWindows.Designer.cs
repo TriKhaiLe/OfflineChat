@@ -30,23 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatWindows));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ptbSettings = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LoggedInUserDisplay = new BaiThucHanh1.UserControls.UserDisplay();
+            this.flpFriendList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panelIcons = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.roundedButton1 = new BaiThucHanh1.UserControls.RoundedButton();
             this.roundedTb1 = new BaiThucHanh1.UserControls.RoundedTb();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.panelIcons = new System.Windows.Forms.Panel();
             this.ptbEmo8 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo7 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo6 = new BaiThucHanh1.UserControls.CircularPicturebox();
@@ -56,26 +52,27 @@
             this.ptbEmo2 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo1 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo = new BaiThucHanh1.UserControls.CircularPicturebox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.ptbBrowseVideo = new BaiThucHanh1.UserControls.RoundedPictureBox();
             this.ptbBrowseImg = new BaiThucHanh1.UserControls.RoundedPictureBox();
             this.ptbAvatar = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.tbMessage = new BaiThucHanh1.UserControls.RoundedTb();
             this.btnSend = new BaiThucHanh1.UserControls.RoundedButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.ChatUserDisplay = new BaiThucHanh1.UserControls.UserDisplay();
-            this.LoggedInUserDisplay = new BaiThucHanh1.UserControls.UserDisplay();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.ptbExit = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSettings)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panelIcons.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo6)).BeginInit();
@@ -85,39 +82,92 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo)).BeginInit();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Controls.Add(this.ptbSettings);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.LoggedInUserDisplay);
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Controls.Add(this.flpFriendList);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 657);
             this.panel2.TabIndex = 16;
             // 
+            // ptbSettings
+            // 
+            this.ptbSettings.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ptbSettings.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.ptbSettings.BorderColor = System.Drawing.Color.CadetBlue;
+            this.ptbSettings.BorderColor2 = System.Drawing.Color.Blue;
+            this.ptbSettings.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.ptbSettings.BorderSize = 1;
+            this.ptbSettings.GradientAngle = 50F;
+            this.ptbSettings.Image = ((System.Drawing.Image)(resources.GetObject("ptbSettings.Image")));
+            this.ptbSettings.Location = new System.Drawing.Point(12, 602);
+            this.ptbSettings.Name = "ptbSettings";
+            this.ptbSettings.Padding = new System.Windows.Forms.Padding(5);
+            this.ptbSettings.Size = new System.Drawing.Size(48, 48);
+            this.ptbSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbSettings.TabIndex = 21;
+            this.ptbSettings.TabStop = false;
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 70);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 69);
             this.panel1.TabIndex = 2;
             // 
-            // flowLayoutPanel1
+            // label1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 152);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(300, 505);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Danh sách bạn bè";
+            // 
+            // LoggedInUserDisplay
+            // 
+            this.LoggedInUserDisplay.BackColor = System.Drawing.Color.SeaShell;
+            this.LoggedInUserDisplay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LoggedInUserDisplay.FullName = "label1";
+            this.LoggedInUserDisplay.Id = "";
+            this.LoggedInUserDisplay.Location = new System.Drawing.Point(0, 0);
+            this.LoggedInUserDisplay.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+            this.LoggedInUserDisplay.Name = "LoggedInUserDisplay";
+            this.LoggedInUserDisplay.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.LoggedInUserDisplay.Size = new System.Drawing.Size(300, 70);
+            this.LoggedInUserDisplay.TabIndex = 1;
+            this.LoggedInUserDisplay.UserStatus = "label2";
+            // 
+            // flpFriendList
+            // 
+            this.flpFriendList.AutoScroll = true;
+            this.flpFriendList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.flpFriendList.Location = new System.Drawing.Point(0, 152);
+            this.flpFriendList.Name = "flpFriendList";
+            this.flpFriendList.Size = new System.Drawing.Size(300, 444);
+            this.flpFriendList.TabIndex = 3;
             // 
             // panel3
             // 
@@ -145,14 +195,16 @@
             // flpChat
             // 
             this.flpChat.AutoScroll = true;
+            this.flpChat.BackColor = System.Drawing.SystemColors.Window;
             this.flpChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpChat.Location = new System.Drawing.Point(0, 50);
             this.flpChat.Name = "flpChat";
-            this.flpChat.Size = new System.Drawing.Size(900, 426);
+            this.flpChat.Size = new System.Drawing.Size(900, 413);
             this.flpChat.TabIndex = 2;
             // 
             // panel10
             // 
+            this.panel10.BackColor = System.Drawing.Color.SeaShell;
             this.panel10.Controls.Add(this.roundedButton1);
             this.panel10.Controls.Add(this.roundedTb1);
             this.panel10.Controls.Add(this.pictureBox13);
@@ -161,115 +213,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(900, 50);
             this.panel10.TabIndex = 3;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox13.Location = new System.Drawing.Point(870, 0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(30, 50);
-            this.pictureBox13.TabIndex = 2;
-            this.pictureBox13.TabStop = false;
-            // 
-            // panelIcons
-            // 
-            this.panelIcons.Controls.Add(this.ptbEmo8);
-            this.panelIcons.Controls.Add(this.ptbEmo7);
-            this.panelIcons.Controls.Add(this.ptbEmo6);
-            this.panelIcons.Controls.Add(this.ptbEmo5);
-            this.panelIcons.Controls.Add(this.ptbEmo4);
-            this.panelIcons.Controls.Add(this.ptbEmo3);
-            this.panelIcons.Controls.Add(this.ptbEmo2);
-            this.panelIcons.Controls.Add(this.ptbEmo1);
-            this.panelIcons.Controls.Add(this.ptbEmo);
-            this.panelIcons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelIcons.Location = new System.Drawing.Point(0, 476);
-            this.panelIcons.Name = "panelIcons";
-            this.panelIcons.Size = new System.Drawing.Size(900, 48);
-            this.panelIcons.TabIndex = 1;
-            this.panelIcons.Visible = false;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.ptbBrowseVideo);
-            this.panel8.Controls.Add(this.ptbBrowseImg);
-            this.panel8.Controls.Add(this.ptbAvatar);
-            this.panel8.Controls.Add(this.tbMessage);
-            this.panel8.Controls.Add(this.btnSend);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 524);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(900, 63);
-            this.panel8.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox11);
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.ChatUserDisplay);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(900, 70);
-            this.panel4.TabIndex = 15;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(762, 0);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(30);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox11.Size = new System.Drawing.Size(68, 70);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 20;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(830, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(30);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1200, 43);
-            this.panel5.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1158, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.Exit_Click);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Controls.Add(this.panel2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 43);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1200, 657);
-            this.panel6.TabIndex = 17;
             // 
             // roundedButton1
             // 
@@ -282,9 +225,9 @@
             this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButton1.ForeColor = System.Drawing.Color.White;
             this.roundedButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundedButton1.Image")));
-            this.roundedButton1.Location = new System.Drawing.Point(619, 2);
+            this.roundedButton1.Location = new System.Drawing.Point(619, 4);
             this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.Size = new System.Drawing.Size(45, 45);
+            this.roundedButton1.Size = new System.Drawing.Size(40, 40);
             this.roundedButton1.TabIndex = 19;
             this.roundedButton1.TextColor = System.Drawing.Color.White;
             this.roundedButton1.UseVisualStyleBackColor = false;
@@ -310,6 +253,34 @@
             this.roundedTb1.TabIndex = 4;
             this.roundedTb1.Texts = "";
             this.roundedTb1.UnderlinedStyle = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox13.Location = new System.Drawing.Point(870, 0);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(30, 50);
+            this.pictureBox13.TabIndex = 2;
+            this.pictureBox13.TabStop = false;
+            // 
+            // panelIcons
+            // 
+            this.panelIcons.BackColor = System.Drawing.SystemColors.Window;
+            this.panelIcons.Controls.Add(this.ptbEmo8);
+            this.panelIcons.Controls.Add(this.ptbEmo7);
+            this.panelIcons.Controls.Add(this.ptbEmo6);
+            this.panelIcons.Controls.Add(this.ptbEmo5);
+            this.panelIcons.Controls.Add(this.ptbEmo4);
+            this.panelIcons.Controls.Add(this.ptbEmo3);
+            this.panelIcons.Controls.Add(this.ptbEmo2);
+            this.panelIcons.Controls.Add(this.ptbEmo1);
+            this.panelIcons.Controls.Add(this.ptbEmo);
+            this.panelIcons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelIcons.Location = new System.Drawing.Point(0, 463);
+            this.panelIcons.Name = "panelIcons";
+            this.panelIcons.Size = new System.Drawing.Size(900, 48);
+            this.panelIcons.TabIndex = 1;
+            this.panelIcons.Visible = false;
             // 
             // ptbEmo8
             // 
@@ -464,16 +435,32 @@
             this.ptbEmo.TabIndex = 21;
             this.ptbEmo.TabStop = false;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.SeaShell;
+            this.panel8.Controls.Add(this.ptbBrowseVideo);
+            this.panel8.Controls.Add(this.ptbBrowseImg);
+            this.panel8.Controls.Add(this.ptbAvatar);
+            this.panel8.Controls.Add(this.tbMessage);
+            this.panel8.Controls.Add(this.btnSend);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 511);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(900, 76);
+            this.panel8.TabIndex = 0;
+            // 
             // ptbBrowseVideo
             // 
-            this.ptbBrowseVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ptbBrowseVideo.BackColor = System.Drawing.Color.White;
             this.ptbBrowseVideo.BorderColor = System.Drawing.Color.Black;
             this.ptbBrowseVideo.BorderWidth = 3;
             this.ptbBrowseVideo.CornerRadius = 10;
             this.ptbBrowseVideo.Image = ((System.Drawing.Image)(resources.GetObject("ptbBrowseVideo.Image")));
-            this.ptbBrowseVideo.Location = new System.Drawing.Point(80, 2);
+            this.ptbBrowseVideo.Location = new System.Drawing.Point(80, 9);
             this.ptbBrowseVideo.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.ptbBrowseVideo.Name = "ptbBrowseVideo";
+            this.ptbBrowseVideo.Padding = new System.Windows.Forms.Padding(5);
             this.ptbBrowseVideo.Size = new System.Drawing.Size(54, 54);
             this.ptbBrowseVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbBrowseVideo.TabIndex = 22;
@@ -482,13 +469,14 @@
             // 
             // ptbBrowseImg
             // 
-            this.ptbBrowseImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ptbBrowseImg.BackColor = System.Drawing.Color.White;
             this.ptbBrowseImg.BorderColor = System.Drawing.Color.Black;
             this.ptbBrowseImg.BorderWidth = 3;
             this.ptbBrowseImg.CornerRadius = 10;
             this.ptbBrowseImg.Image = ((System.Drawing.Image)(resources.GetObject("ptbBrowseImg.Image")));
-            this.ptbBrowseImg.Location = new System.Drawing.Point(18, 2);
+            this.ptbBrowseImg.Location = new System.Drawing.Point(18, 9);
             this.ptbBrowseImg.Name = "ptbBrowseImg";
+            this.ptbBrowseImg.Padding = new System.Windows.Forms.Padding(5);
             this.ptbBrowseImg.Size = new System.Drawing.Size(54, 54);
             this.ptbBrowseImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbBrowseImg.TabIndex = 21;
@@ -504,7 +492,7 @@
             this.ptbAvatar.BorderSize = 1;
             this.ptbAvatar.GradientAngle = 50F;
             this.ptbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("ptbAvatar.Image")));
-            this.ptbAvatar.Location = new System.Drawing.Point(795, 4);
+            this.ptbAvatar.Location = new System.Drawing.Point(795, 11);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(48, 48);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -521,7 +509,7 @@
             this.tbMessage.BorderSize = 1;
             this.tbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbMessage.Location = new System.Drawing.Point(141, 14);
+            this.tbMessage.Location = new System.Drawing.Point(141, 21);
             this.tbMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
@@ -545,13 +533,53 @@
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.ForeColor = System.Drawing.Color.White;
             this.btnSend.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.Image")));
-            this.btnSend.Location = new System.Drawing.Point(849, 9);
+            this.btnSend.Location = new System.Drawing.Point(849, 16);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(40, 40);
             this.btnSend.TabIndex = 18;
             this.btnSend.TextColor = System.Drawing.Color.White;
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Window;
+            this.panel4.Controls.Add(this.pictureBox11);
+            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Controls.Add(this.ChatUserDisplay);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(900, 70);
+            this.panel4.TabIndex = 15;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(762, 0);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(30);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox11.Size = new System.Drawing.Size(68, 70);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 20;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.SeaShell;
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(830, 0);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(30);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 19;
+            this.pictureBox4.TabStop = false;
             // 
             // ChatUserDisplay
             // 
@@ -561,21 +589,42 @@
             this.ChatUserDisplay.Location = new System.Drawing.Point(0, 0);
             this.ChatUserDisplay.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.ChatUserDisplay.Name = "ChatUserDisplay";
+            this.ChatUserDisplay.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.ChatUserDisplay.Size = new System.Drawing.Size(250, 70);
             this.ChatUserDisplay.TabIndex = 0;
             this.ChatUserDisplay.UserStatus = "label2";
             // 
-            // LoggedInUserDisplay
+            // panel5
             // 
-            this.LoggedInUserDisplay.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LoggedInUserDisplay.FullName = "label1";
-            this.LoggedInUserDisplay.Id = "";
-            this.LoggedInUserDisplay.Location = new System.Drawing.Point(0, 0);
-            this.LoggedInUserDisplay.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-            this.LoggedInUserDisplay.Name = "LoggedInUserDisplay";
-            this.LoggedInUserDisplay.Size = new System.Drawing.Size(300, 70);
-            this.LoggedInUserDisplay.TabIndex = 1;
-            this.LoggedInUserDisplay.UserStatus = "label2";
+            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.Controls.Add(this.ptbExit);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1200, 43);
+            this.panel5.TabIndex = 16;
+            // 
+            // ptbExit
+            // 
+            this.ptbExit.BackColor = System.Drawing.Color.Salmon;
+            this.ptbExit.Image = ((System.Drawing.Image)(resources.GetObject("ptbExit.Image")));
+            this.ptbExit.Location = new System.Drawing.Point(1158, 7);
+            this.ptbExit.Name = "ptbExit";
+            this.ptbExit.Size = new System.Drawing.Size(30, 30);
+            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbExit.TabIndex = 20;
+            this.ptbExit.TabStop = false;
+            this.ptbExit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Controls.Add(this.panel2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 43);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1200, 657);
+            this.panel6.TabIndex = 17;
             // 
             // ChatWindows
             // 
@@ -591,18 +640,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatWindows_FormClosing);
             this.Load += new System.EventHandler(this.ChatWindows_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSettings)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panelIcons.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo6)).EndInit();
@@ -612,9 +657,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo)).EndInit();
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -626,8 +678,8 @@
         private UserControls.UserDisplay ChatUserDisplay;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox ptbExit;
+        private System.Windows.Forms.FlowLayoutPanel flpFriendList;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panelIcons;
         private System.Windows.Forms.Panel panel8;
@@ -654,5 +706,7 @@
         private UserControls.RoundedPictureBox ptbBrowseVideo;
         private UserControls.RoundedPictureBox ptbBrowseImg;
         private UserControls.RoundedButton roundedButton1;
+        private System.Windows.Forms.Label label1;
+        private UserControls.CircularPicturebox ptbSettings;
     }
 }
