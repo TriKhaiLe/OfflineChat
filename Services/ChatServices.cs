@@ -11,14 +11,14 @@ namespace BaiThucHanh1.Services
 {
     public static class ChatServices
     {
-        public static string contentDirectory = $"{Environment.CurrentDirectory}\\ChatContent\\";
-        public static string mediaDirectory = $"{Environment.CurrentDirectory}\\Media\\";
-        public static string iconDirectory = $"{Environment.CurrentDirectory}\\Icons\\";
+        public static string ContentDirectory = $"{Environment.CurrentDirectory}\\ChatContent\\";
+        public static string MediaDirectory = $"{Environment.CurrentDirectory}\\Media\\";
+        public static string IconDirectory = $"{Environment.CurrentDirectory}\\Icons\\";
 
         public static void SaveToFile(List<ChatContent> chats, string idFrom, string idTo)
         {
             // tao duong dan den thu muc chua noi dung chat cua nguoi gui
-            string fromDirectory = $"{contentDirectory}\\{idFrom}";
+            string fromDirectory = $"{ContentDirectory}\\{idFrom}";
             if (!Directory.Exists(fromDirectory))
                 Directory.CreateDirectory(fromDirectory);
 
@@ -30,7 +30,7 @@ namespace BaiThucHanh1.Services
 
         internal static List<ChatContent> LoadChatContent(string idFrom, string idTo)
         {
-            string filePath = $"{contentDirectory}\\{idFrom}\\{idTo}.json";
+            string filePath = $"{ContentDirectory}\\{idFrom}\\{idTo}.json";
 
             if (File.Exists(filePath))
             {

@@ -99,6 +99,12 @@
     <Compile Include="UserControls\ChatWindows\ImageBlock.Designer.cs">
       <DependentUpon>ImageBlock.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ChatWindows\VideoBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChatWindows\VideoBlock.Designer.cs">
+      <DependentUpon>VideoBlock.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CircularPicturebox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     <EmbeddedResource Include="UserControls\ChatWindows\MessageBlock.resx">
       <DependentUpon>MessageBlock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChatWindows\VideoBlock.resx">
+      <DependentUpon>VideoBlock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RoundedTb.resx">
       <DependentUpon>RoundedTb.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +246,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ava05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

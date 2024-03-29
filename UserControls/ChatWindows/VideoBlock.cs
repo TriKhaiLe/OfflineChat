@@ -8,19 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BaiThucHanh1.UserControls
+namespace BaiThucHanh1.UserControls.ChatWindows
 {
-    public partial class IconBlock : UserControl
+    public partial class VideoBlock : UserControl
     {
-        public IconBlock()
+        public VideoBlock()
         {
             InitializeComponent();
         }
 
-        internal void SetUpIconBlock(string pathToAvatar, string iconPath, string time)
+        internal void SetUpVideoBlock(string pathToAvatar, string path, string time)
         {
             ptbAvatar.Image = Image.FromFile(pathToAvatar);
-            ptbIcon.Image = Image.FromFile(iconPath);
+            axWindowsMediaPlayer1.URL = path;
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            //axWindowsMediaPlayer1.uiMode = "mini";
             lbTimeStamp.Text = time;
         }
     }

@@ -45,7 +45,7 @@
             this.ptbAvatar.BorderSize = 2;
             this.ptbAvatar.Dock = System.Windows.Forms.DockStyle.Left;
             this.ptbAvatar.GradientAngle = 50F;
-            this.ptbAvatar.Location = new System.Drawing.Point(0, 0);
+            this.ptbAvatar.Location = new System.Drawing.Point(10, 0);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -54,10 +54,12 @@
             // 
             // ptbImage
             // 
+            this.ptbImage.BorderColor = System.Drawing.Color.Cyan;
             this.ptbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImage.BorderWidth = 3;
             this.ptbImage.CornerRadius = 10;
             this.ptbImage.Image = ((System.Drawing.Image)(resources.GetObject("ptbImage.Image")));
-            this.ptbImage.Location = new System.Drawing.Point(76, 3);
+            this.ptbImage.Location = new System.Drawing.Point(86, 3);
             this.ptbImage.Name = "ptbImage";
             this.ptbImage.Size = new System.Drawing.Size(180, 180);
             this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -66,8 +68,9 @@
             // 
             // lbTimeStamp
             // 
+            this.lbTimeStamp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTimeStamp.AutoSize = true;
-            this.lbTimeStamp.Location = new System.Drawing.Point(769, 167);
+            this.lbTimeStamp.Location = new System.Drawing.Point(754, 167);
             this.lbTimeStamp.Name = "lbTimeStamp";
             this.lbTimeStamp.Size = new System.Drawing.Size(78, 16);
             this.lbTimeStamp.TabIndex = 4;
@@ -81,7 +84,8 @@
             this.Controls.Add(this.ptbImage);
             this.Controls.Add(this.ptbAvatar);
             this.Name = "ImageBlock";
-            this.Size = new System.Drawing.Size(850, 200);
+            this.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this.Size = new System.Drawing.Size(840, 200);
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);

@@ -34,9 +34,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.panelIcons = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -56,7 +56,7 @@
             this.ptbEmo2 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo1 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo = new BaiThucHanh1.UserControls.CircularPicturebox();
-            this.roundedPictureBox2 = new BaiThucHanh1.UserControls.RoundedPictureBox();
+            this.ptbBrowseVideo = new BaiThucHanh1.UserControls.RoundedPictureBox();
             this.ptbBrowseImg = new BaiThucHanh1.UserControls.RoundedPictureBox();
             this.ptbAvatar = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.tbMessage = new BaiThucHanh1.UserControls.RoundedTb();
@@ -85,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +142,15 @@
             this.panel7.Size = new System.Drawing.Size(900, 587);
             this.panel7.TabIndex = 16;
             // 
+            // flpChat
+            // 
+            this.flpChat.AutoScroll = true;
+            this.flpChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpChat.Location = new System.Drawing.Point(0, 50);
+            this.flpChat.Name = "flpChat";
+            this.flpChat.Size = new System.Drawing.Size(900, 426);
+            this.flpChat.TabIndex = 2;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.roundedButton1);
@@ -161,15 +170,6 @@
             this.pictureBox13.Size = new System.Drawing.Size(30, 50);
             this.pictureBox13.TabIndex = 2;
             this.pictureBox13.TabStop = false;
-            // 
-            // flpChat
-            // 
-            this.flpChat.AutoScroll = true;
-            this.flpChat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpChat.Location = new System.Drawing.Point(0, 50);
-            this.flpChat.Name = "flpChat";
-            this.flpChat.Size = new System.Drawing.Size(900, 426);
-            this.flpChat.TabIndex = 2;
             // 
             // panelIcons
             // 
@@ -191,7 +191,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.roundedPictureBox2);
+            this.panel8.Controls.Add(this.ptbBrowseVideo);
             this.panel8.Controls.Add(this.ptbBrowseImg);
             this.panel8.Controls.Add(this.ptbAvatar);
             this.panel8.Controls.Add(this.tbMessage);
@@ -218,11 +218,11 @@
             this.pictureBox11.BackColor = System.Drawing.Color.LightSkyBlue;
             this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(760, 0);
+            this.pictureBox11.Location = new System.Drawing.Point(762, 0);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(30);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox11.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox11.Size = new System.Drawing.Size(68, 70);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 20;
             this.pictureBox11.TabStop = false;
@@ -237,7 +237,7 @@
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Padding = new System.Windows.Forms.Padding(10);
             this.pictureBox4.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 19;
             this.pictureBox4.TabStop = false;
             // 
@@ -464,25 +464,30 @@
             this.ptbEmo.TabIndex = 21;
             this.ptbEmo.TabStop = false;
             // 
-            // roundedPictureBox2
+            // ptbBrowseVideo
             // 
-            this.roundedPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.roundedPictureBox2.CornerRadius = 10;
-            this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
-            this.roundedPictureBox2.Location = new System.Drawing.Point(80, 0);
-            this.roundedPictureBox2.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.roundedPictureBox2.Name = "roundedPictureBox2";
-            this.roundedPictureBox2.Size = new System.Drawing.Size(54, 54);
-            this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox2.TabIndex = 22;
-            this.roundedPictureBox2.TabStop = false;
+            this.ptbBrowseVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ptbBrowseVideo.BorderColor = System.Drawing.Color.Black;
+            this.ptbBrowseVideo.BorderWidth = 3;
+            this.ptbBrowseVideo.CornerRadius = 10;
+            this.ptbBrowseVideo.Image = ((System.Drawing.Image)(resources.GetObject("ptbBrowseVideo.Image")));
+            this.ptbBrowseVideo.Location = new System.Drawing.Point(80, 2);
+            this.ptbBrowseVideo.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.ptbBrowseVideo.Name = "ptbBrowseVideo";
+            this.ptbBrowseVideo.Size = new System.Drawing.Size(54, 54);
+            this.ptbBrowseVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbBrowseVideo.TabIndex = 22;
+            this.ptbBrowseVideo.TabStop = false;
+            this.ptbBrowseVideo.Click += new System.EventHandler(this.ptbBrowseVideo_Click);
             // 
             // ptbBrowseImg
             // 
             this.ptbBrowseImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ptbBrowseImg.BorderColor = System.Drawing.Color.Black;
+            this.ptbBrowseImg.BorderWidth = 3;
             this.ptbBrowseImg.CornerRadius = 10;
             this.ptbBrowseImg.Image = ((System.Drawing.Image)(resources.GetObject("ptbBrowseImg.Image")));
-            this.ptbBrowseImg.Location = new System.Drawing.Point(18, 0);
+            this.ptbBrowseImg.Location = new System.Drawing.Point(18, 2);
             this.ptbBrowseImg.Name = "ptbBrowseImg";
             this.ptbBrowseImg.Size = new System.Drawing.Size(54, 54);
             this.ptbBrowseImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -499,7 +504,7 @@
             this.ptbAvatar.BorderSize = 1;
             this.ptbAvatar.GradientAngle = 50F;
             this.ptbAvatar.Image = ((System.Drawing.Image)(resources.GetObject("ptbAvatar.Image")));
-            this.ptbAvatar.Location = new System.Drawing.Point(795, 3);
+            this.ptbAvatar.Location = new System.Drawing.Point(795, 4);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(48, 48);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -516,7 +521,7 @@
             this.tbMessage.BorderSize = 1;
             this.tbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbMessage.Location = new System.Drawing.Point(141, 12);
+            this.tbMessage.Location = new System.Drawing.Point(141, 14);
             this.tbMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
@@ -540,7 +545,7 @@
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.ForeColor = System.Drawing.Color.White;
             this.btnSend.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.Image")));
-            this.btnSend.Location = new System.Drawing.Point(849, 10);
+            this.btnSend.Location = new System.Drawing.Point(849, 9);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(40, 40);
             this.btnSend.TabIndex = 18;
@@ -607,7 +612,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
@@ -646,7 +651,7 @@
         private UserControls.CircularPicturebox ptbAvatar;
         private UserControls.CircularPicturebox ptbEmo7;
         private UserControls.CircularPicturebox ptbEmo8;
-        private UserControls.RoundedPictureBox roundedPictureBox2;
+        private UserControls.RoundedPictureBox ptbBrowseVideo;
         private UserControls.RoundedPictureBox ptbBrowseImg;
         private UserControls.RoundedButton roundedButton1;
     }

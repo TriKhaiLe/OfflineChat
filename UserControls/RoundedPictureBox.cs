@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace BaiThucHanh1.UserControls
@@ -12,6 +8,8 @@ namespace BaiThucHanh1.UserControls
     public class RoundedPictureBox : PictureBox
     {
         public int CornerRadius { get; set; } = 10; // Độ cong của góc, có thể thay đổi tùy ý
+        public Color BorderColor { get; set; } = Color.Cyan; // Màu sắc của đường viền
+        public int BorderWidth { get; set; } = 3; // Độ dày của đường viền
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -25,7 +23,12 @@ namespace BaiThucHanh1.UserControls
             path.CloseAllFigures();
 
             this.Region = new Region(path);
+
+            // Vẽ đường viền
+            using (Pen pen = new Pen(BorderColor, BorderWidth))
+            {
+                e.Graphics.DrawPath(pen, path);
+            }
         }
     }
-
 }

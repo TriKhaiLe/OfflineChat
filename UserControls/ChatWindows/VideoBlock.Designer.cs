@@ -1,6 +1,6 @@
-﻿namespace BaiThucHanh1.UserControls
+﻿namespace BaiThucHanh1.UserControls.ChatWindows
 {
-    partial class IconBlock
+    partial class VideoBlock
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,22 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoBlock));
             this.lbTimeStamp = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.ptbAvatar = new BaiThucHanh1.UserControls.CircularPicturebox();
-            this.ptbIcon = new BaiThucHanh1.UserControls.CircularPicturebox();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTimeStamp
             // 
             this.lbTimeStamp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTimeStamp.AutoSize = true;
-            this.lbTimeStamp.Location = new System.Drawing.Point(754, 54);
+            this.lbTimeStamp.Location = new System.Drawing.Point(754, 217);
             this.lbTimeStamp.Name = "lbTimeStamp";
             this.lbTimeStamp.Size = new System.Drawing.Size(78, 16);
-            this.lbTimeStamp.TabIndex = 3;
+            this.lbTimeStamp.TabIndex = 5;
             this.lbTimeStamp.Text = "24:24:24 AM";
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(86, 3);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(200, 200);
+            this.axWindowsMediaPlayer1.TabIndex = 6;
             // 
             // ptbAvatar
             // 
@@ -58,44 +68,30 @@
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.Size = new System.Drawing.Size(70, 70);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAvatar.TabIndex = 1;
+            this.ptbAvatar.TabIndex = 3;
             this.ptbAvatar.TabStop = false;
             // 
-            // ptbIcon
-            // 
-            this.ptbIcon.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.ptbIcon.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.ptbIcon.BorderColor2 = System.Drawing.Color.HotPink;
-            this.ptbIcon.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.ptbIcon.BorderSize = 0;
-            this.ptbIcon.GradientAngle = 50F;
-            this.ptbIcon.Location = new System.Drawing.Point(86, 0);
-            this.ptbIcon.Name = "ptbIcon";
-            this.ptbIcon.Size = new System.Drawing.Size(70, 70);
-            this.ptbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbIcon.TabIndex = 4;
-            this.ptbIcon.TabStop = false;
-            // 
-            // IconBlock
+            // VideoBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ptbIcon);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.lbTimeStamp);
             this.Controls.Add(this.ptbAvatar);
-            this.Name = "IconBlock";
+            this.Name = "VideoBlock";
             this.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            this.Size = new System.Drawing.Size(840, 90);
+            this.Size = new System.Drawing.Size(840, 250);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lbTimeStamp;
+
         private CircularPicturebox ptbAvatar;
-        private CircularPicturebox ptbIcon;
+        private System.Windows.Forms.Label lbTimeStamp;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

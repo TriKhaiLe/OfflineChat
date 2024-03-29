@@ -26,7 +26,6 @@ namespace BaiThucHanh1
         public ChatWindows(User user)
         {
             InitializeComponent();
-
             loggedUser = user;
         }
 
@@ -61,16 +60,19 @@ namespace BaiThucHanh1
                         imageBlock.SetUpImageBlock(loggedUser.PathToAvatar, chatContent.Content, chatContent.TimeStamp);
                         flpChat.Controls.Add(imageBlock);
                         break;
-                        //case "video":
-                        //    VideoBlock videoBlock = new VideoBlock();
-                        //    videoBlock.SetUpVideoBlock(
-                        //                                   chatContent.SenderAvatarPath,
-                        //                                                              chatContent.Content,
-                        //                                                                                         chatContent.Time);
-                        //    flpChat.Controls.Add(videoBlock);
-                        //    break;
+                    case "Icon":
+                        IconBlock iconBlock = new IconBlock();
+                        iconBlock.SetUpIconBlock(loggedUser.PathToAvatar, chatContent.Content, chatContent.TimeStamp);
+                        flpChat.Controls.Add(iconBlock);
+                        break;
+                    case "Video":
+                        VideoBlock videoBlock = new VideoBlock();
+                        videoBlock.SetUpVideoBlock(loggedUser.PathToAvatar, chatContent.Content, chatContent.TimeStamp);
+                        flpChat.Controls.Add(videoBlock);
+                        break;
                 }
             }
+            flpChat.AutoScrollPosition = new Point(0, flpChat.VerticalScroll.Maximum);
         }
 
         private void ChatWindows_FormClosing(object sender, FormClosingEventArgs e)
@@ -82,28 +84,70 @@ namespace BaiThucHanh1
         private void ChatWindows_Load(object sender, EventArgs e)
         {
             LoadUsers();
-
             // Thêm xử lý sự kiện Click cho mỗi Control trong FlowLayoutPanel
             foreach (Control control in flowLayoutPanel1.Controls)
             {
                 control.Click += UserControl_Click;
             }
-
             SetCurrentLoggedInUser();
+
             SetUpIcons();
+            // Them su kien click cho moi icon
+            foreach (Control control in panelIcons.Controls)
+            {
+                control.Click += Icon_Click;
+            }
+
+        }
+
+        private void Icon_Click(object sender, EventArgs e)
+        {
+            // Lay icon tu control
+            CircularPicturebox pictureBox = (CircularPicturebox)sender;
+            string iconPath = pictureBox.ImageLocation;
+            string time = DateTime.Now.ToString("h:mm:ss tt");
+
+            // hien thi len ui
+            AppendIconMessage(iconPath, time);
+
+
+            // luu vao file
+            ChatContent chatContent = new ChatContent(loggedUser.Id, currentChatUserId, "Icon", iconPath, time);
+            chatContents.Add(chatContent);
+            ChatServices.SaveToFile(chatContents, loggedUser.Id, currentChatUserId);
+
+        }
+
+        private void AppendIconMessage(string iconPath, string time)
+        {
+            IconBlock iconBlock = new IconBlock();
+            iconBlock.SetUpIconBlock(loggedUser.PathToAvatar, iconPath, time);
+            flpChat.Controls.Add(iconBlock);
+            flpChat.AutoScrollPosition = new Point(0, flpChat.VerticalScroll.Maximum);
         }
 
         private void SetUpIcons()
         {
-            ptbEmo.Image = Image.FromFile(ChatServices.iconDirectory + "emo.png");
-            ptbEmo1.Image = Image.FromFile(ChatServices.iconDirectory + "emo1.png");
-            ptbEmo2.Image = Image.FromFile(ChatServices.iconDirectory + "emo2.png");
-            ptbEmo3.Image = Image.FromFile(ChatServices.iconDirectory + "emo3.png");
-            ptbEmo4.Image = Image.FromFile(ChatServices.iconDirectory + "emo4.png");
-            ptbEmo5.Image = Image.FromFile(ChatServices.iconDirectory + "emo5.png");
-            ptbEmo6.Image = Image.FromFile(ChatServices.iconDirectory + "emo6.png");
-            ptbEmo7.Image = Image.FromFile(ChatServices.iconDirectory + "emo7.png");
-            ptbEmo8.Image = Image.FromFile(ChatServices.iconDirectory + "emo8.png");
+            ptbEmo.Image = Image.FromFile(ChatServices.IconDirectory + "emo.png");
+            ptbEmo1.Image = Image.FromFile(ChatServices.IconDirectory + "emo1.png");
+            ptbEmo2.Image = Image.FromFile(ChatServices.IconDirectory + "emo2.png");
+            ptbEmo3.Image = Image.FromFile(ChatServices.IconDirectory + "emo3.png");
+            ptbEmo4.Image = Image.FromFile(ChatServices.IconDirectory + "emo4.png");
+            ptbEmo5.Image = Image.FromFile(ChatServices.IconDirectory + "emo5.png");
+            ptbEmo6.Image = Image.FromFile(ChatServices.IconDirectory + "emo6.png");
+            ptbEmo7.Image = Image.FromFile(ChatServices.IconDirectory + "emo7.png");
+            ptbEmo8.Image = Image.FromFile(ChatServices.IconDirectory + "emo8.png");
+
+            ptbEmo.ImageLocation = ChatServices.IconDirectory + "emo.png";
+            ptbEmo1.ImageLocation = ChatServices.IconDirectory + "emo1.png";
+            ptbEmo2.ImageLocation = ChatServices.IconDirectory + "emo2.png";
+            ptbEmo3.ImageLocation = ChatServices.IconDirectory + "emo3.png";
+            ptbEmo4.ImageLocation = ChatServices.IconDirectory + "emo4.png";
+            ptbEmo5.ImageLocation = ChatServices.IconDirectory + "emo5.png";
+            ptbEmo6.ImageLocation = ChatServices.IconDirectory + "emo6.png";
+            ptbEmo7.ImageLocation = ChatServices.IconDirectory + "emo7.png";
+            ptbEmo8.ImageLocation = ChatServices.IconDirectory + "emo8.png";
+
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -152,7 +196,6 @@ namespace BaiThucHanh1
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            string avatarPath = loggedUser.PathToAvatar;
             string content = tbMessage.Texts;
             string time = DateTime.Now.ToString("h:mm:ss tt");
 
@@ -162,14 +205,20 @@ namespace BaiThucHanh1
             ChatServices.SaveToFile(chatContents, loggedUser.Id, currentChatUserId);
 
             // hien thi len ui
+            AppendTextMessage(content, time);
+            
+            tbMessage.Texts = "";
+        }
+
+        private void AppendTextMessage(string content, string time)
+        {
             MessageBlock messageBlock = new MessageBlock();
             messageBlock.SetUpMessageBlock(
-                avatarPath, 
+                loggedUser.PathToAvatar,
                 content,
                 time);
             flpChat.Controls.Add(messageBlock);
-            
-            tbMessage.Texts = "";
+            flpChat.AutoScrollPosition = new Point(0, flpChat.VerticalScroll.Maximum);
         }
 
         private void tbMessage_KeyPress(object sender, KeyPressEventArgs e)
@@ -211,7 +260,7 @@ namespace BaiThucHanh1
             CopyToStorage(openFileDialog.FileNames);
 
             // append to flow layout panel
-            AppendImageMessage(openFileDialog.FileNames, avatarPath, time);
+            AppendImageMessage(openFileDialog.FileNames, time);
 
             // save to file
             foreach (string path in openFileDialog.FileNames)
@@ -227,18 +276,58 @@ namespace BaiThucHanh1
             foreach (string path in fileNames)
             {
                 string fileName = Path.GetFileName(path);
-                string destPath = ChatServices.mediaDirectory + fileName;
+                string destPath = ChatServices.MediaDirectory + fileName;
                 File.Copy(path, destPath, true);
             }
         }
 
-        private void AppendImageMessage(string[] fileNames, string avatarPath, string time)
+        private void AppendImageMessage(string[] fileNames, string time)
         {
             foreach (string path in fileNames)
             {
                 ImageBlock imageBlock = new ImageBlock();
-                imageBlock.SetUpImageBlock(avatarPath, path, time);
+                imageBlock.SetUpImageBlock(loggedUser.PathToAvatar, path, time);
                 flpChat.Controls.Add(imageBlock);
+                flpChat.AutoScrollPosition = new Point(0, flpChat.VerticalScroll.Maximum);
+
+            }
+        }
+
+        private void ptbBrowseVideo_Click(object sender, EventArgs e)
+        {
+            // Open file dialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Video files (*.mp4, *.avi, *.flv) | *.mp4; *.avi; *.flv";
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            string time = DateTime.Now.ToString("h:mm:ss tt");
+
+            // copy image to media folder
+            CopyToStorage(openFileDialog.FileNames);
+
+            // append to flow layout panel
+            AppendVideoMessage(openFileDialog.FileNames, time);
+
+            // save to file
+            foreach (string path in openFileDialog.FileNames)
+            {
+                ChatContent chatContent = new ChatContent(loggedUser.Id, currentChatUserId, "Video", path, time);
+                chatContents.Add(chatContent);
+                ChatServices.SaveToFile(chatContents, loggedUser.Id, currentChatUserId);
+            }
+        }
+
+        private void AppendVideoMessage(string[] fileNames, string time)
+        {
+            foreach (string path in fileNames)
+            {
+                VideoBlock videoBlock = new VideoBlock();
+                videoBlock.SetUpVideoBlock(loggedUser.PathToAvatar, path, time);
+                flpChat.Controls.Add(videoBlock);
+                flpChat.AutoScrollPosition = new Point(0, flpChat.VerticalScroll.Maximum);
             }
         }
     }
