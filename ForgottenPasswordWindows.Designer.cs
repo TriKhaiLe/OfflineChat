@@ -105,6 +105,7 @@
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lbMessage);
             this.Name = "ForgottenPasswordWindows";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ForgottenPasswordWindows";
             this.ResumeLayout(false);
             this.PerformLayout();

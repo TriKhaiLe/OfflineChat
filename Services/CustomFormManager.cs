@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ namespace BaiThucHanh1.Services
 );
 
         public static string CurrentLanguage { get; set; } = "English";
-
+        public static string CurrentUIMode { get; set; } = "Light";
 
     }
 }

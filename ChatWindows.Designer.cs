@@ -162,7 +162,7 @@
             // flpFriendList
             // 
             this.flpFriendList.AutoScroll = true;
-            this.flpFriendList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.flpFriendList.BackColor = System.Drawing.Color.LightSkyBlue;
             this.flpFriendList.Location = new System.Drawing.Point(0, 152);
             this.flpFriendList.Name = "flpFriendList";
             this.flpFriendList.Size = new System.Drawing.Size(300, 444);

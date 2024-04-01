@@ -55,12 +55,6 @@
     <Compile Include="ChatWindows.Designer.cs">
       <DependentUpon>ChatWindows.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfirmNewPasswordWindows.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConfirmNewPasswordWindows.Designer.cs">
-      <DependentUpon>ConfirmNewPasswordWindows.cs</DependentUpon>
-    </Compile>
     <Compile Include="ForgottenPasswordWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +82,12 @@
     <Compile Include="Services\FilePathManager.cs" />
     <Compile Include="Services\NavigationControl.cs" />
     <Compile Include="Services\UserServices.cs" />
+    <Compile Include="SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUpWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,9 +169,6 @@
     <EmbeddedResource Include="ChatWindows.resx">
       <DependentUpon>ChatWindows.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfirmNewPasswordWindows.resx">
-      <DependentUpon>ConfirmNewPasswordWindows.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ForgottenPasswordWindows.resx">
       <DependentUpon>ForgottenPasswordWindows.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +198,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUpWindows.resx">
       <DependentUpon>SignUpWindows.cs</DependentUpon>
     </EmbeddedResource>

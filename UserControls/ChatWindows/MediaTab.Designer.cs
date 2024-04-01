@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flpImages = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flpVideos = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.flpImages = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpVideos = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +70,16 @@
             this.panel1.Size = new System.Drawing.Size(874, 249);
             this.panel1.TabIndex = 0;
             // 
+            // flpImages
+            // 
+            this.flpImages.AutoScroll = true;
+            this.flpImages.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flpImages.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpImages.Location = new System.Drawing.Point(0, 34);
+            this.flpImages.Name = "flpImages";
+            this.flpImages.Size = new System.Drawing.Size(874, 215);
+            this.flpImages.TabIndex = 3;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -91,15 +101,6 @@
             this.panel2.Size = new System.Drawing.Size(874, 249);
             this.panel2.TabIndex = 1;
             // 
-            // flpVideos
-            // 
-            this.flpVideos.AutoScroll = true;
-            this.flpVideos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpVideos.Location = new System.Drawing.Point(0, 42);
-            this.flpVideos.Name = "flpVideos";
-            this.flpVideos.Size = new System.Drawing.Size(874, 207);
-            this.flpVideos.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -111,15 +112,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Videos";
             // 
-            // flpImages
+            // flpVideos
             // 
-            this.flpImages.AutoScroll = true;
-            this.flpImages.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpImages.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpImages.Location = new System.Drawing.Point(0, 34);
-            this.flpImages.Name = "flpImages";
-            this.flpImages.Size = new System.Drawing.Size(874, 215);
-            this.flpImages.TabIndex = 3;
+            this.flpVideos.AutoScroll = true;
+            this.flpVideos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flpVideos.Location = new System.Drawing.Point(0, 42);
+            this.flpVideos.Name = "flpVideos";
+            this.flpVideos.Size = new System.Drawing.Size(874, 207);
+            this.flpVideos.TabIndex = 2;
             // 
             // MediaTab
             // 

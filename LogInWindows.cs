@@ -34,18 +34,6 @@ namespace BaiThucHanh1
             string email = tbEmail.Texts;
             string password = tbPass.Texts;
 
-            //// Example method to check if user exists
-            //if (Services.UserServices.IsUserExists(email, password))
-            //{
-            //    Hide();
-            //    ChatWindows homeWindows = new ChatWindows();
-            //    homeWindows.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid email or password");
-            //}
-
             User user = UserServices.Login(email, password);
             if (user != null)
             {

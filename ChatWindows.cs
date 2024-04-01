@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,7 @@ namespace BaiThucHanh1
         List<ChatContent> chatContents = new List<ChatContent>(); // List chứa nội dung chat với người dùng hiện tại
         NavigationControl navigationControl;
         MediaTab mediaTab;
+        Color tabSelectedColor = Color.SeaShell;
 
         public ChatWindows(User user)
         {
@@ -42,7 +44,7 @@ namespace BaiThucHanh1
 
                 // Load nội dung chat giữa 2 người
                 navigationControl.Display(0);
-                ptbNavChat.BackColor = Color.SeaShell;
+                ptbNavChat.BackColor = tabSelectedColor;
                 ptbNavMedia.BackColor = Color.White;
 
                 chatContents = ChatServices.LoadChatContent(loggedUser.Id, currentChatUserId);
@@ -109,6 +111,8 @@ namespace BaiThucHanh1
                 control.Click += Icon_Click;
             }
 
+            UpdateLanguage();
+            UpdateUI();
         }
 
         private void Icon_Click(object sender, EventArgs e)
@@ -347,7 +351,7 @@ namespace BaiThucHanh1
         private void ptbNavChat_Click(object sender, EventArgs e)
         {
             navigationControl.Display(0);
-            ptbNavChat.BackColor = Color.SeaShell;
+            ptbNavChat.BackColor = tabSelectedColor;
             ptbNavMedia.BackColor = Color.White;
         }
 
@@ -364,7 +368,7 @@ namespace BaiThucHanh1
 
             navigationControl = new NavigationControl(pnlTabChat, mediaTab);
             navigationControl.Display(1);
-            ptbNavMedia.BackColor = Color.SeaShell;
+            ptbNavMedia.BackColor = tabSelectedColor;
             ptbNavChat.BackColor = Color.White;
         }
 
@@ -387,7 +391,70 @@ namespace BaiThucHanh1
 
         private void ptbSettings_Click(object sender, EventArgs e)
         {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.ShowDialog();
 
+            if (settingsWindow.DialogResult == DialogResult.OK)
+            {
+                UpdateLanguage();
+                UpdateUI();
+            }
+        }
+
+        private void UpdateUI()
+        {
+            switch (CustomFormManager.CurrentUIMode)
+            {
+                case "Light":
+                    panel5.BackColor = Color.SteelBlue;
+                    LoggedInUserDisplay.BackColor = Color.SeaShell;
+                    panel2.BackColor = Color.SteelBlue;
+                    flpFriendList.BackColor = Color.LightSkyBlue;
+                    panel4.BackColor = Color.White;
+                    panel10.BackColor = Color.SeaShell;
+                    flpChat.BackColor = Color.White;
+                    panelIcons.BackColor = Color.White;
+                    panel8.BackColor = Color.SeaShell;
+                    tabSelectedColor = Color.SeaShell;
+                    ptbNavChat.BackColor = tabSelectedColor;
+
+                    break;
+
+                case "Dark":
+                    panel5.BackColor = Color.DarkGray;
+                    LoggedInUserDisplay.BackColor = Color.Gray;
+                    panel2.BackColor = Color.DarkGray;
+                    flpFriendList.BackColor = Color.Gray;
+                    panel4.BackColor = Color.Silver;
+                    panel10.BackColor = Color.Gray;
+                    flpChat.BackColor = Color.Silver;
+                    panelIcons.BackColor = Color.Silver;
+                    panel8.BackColor = Color.Gray;
+                    tabSelectedColor = Color.Gray;
+                    ptbNavChat.BackColor = tabSelectedColor;
+
+                    break;
+            }
+        }
+
+        private void UpdateLanguage()
+        {
+            switch (CustomFormManager.CurrentLanguage)
+            {
+                case "English":
+                    label1.Text = "Friends list";
+                    tbSearch.PlaceholderText = "Search...";
+                    tbMessage.PlaceholderText = "Type a message...";
+                    break;
+
+                case "Tiếng Việt":
+                    label1.Text = "Danh sách bạn bè";
+                    tbSearch.PlaceholderText = "Tìm kiếm...";
+                    tbMessage.PlaceholderText = "Nhập nội dung chat...";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
