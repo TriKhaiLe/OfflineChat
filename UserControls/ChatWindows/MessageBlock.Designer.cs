@@ -62,7 +62,7 @@
             this.tbMessage.Enabled = false;
             this.tbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbMessage.Location = new System.Drawing.Point(82, 6);
+            this.tbMessage.Location = new System.Drawing.Point(87, 4);
             this.tbMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";

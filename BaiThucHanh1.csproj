@@ -86,6 +86,7 @@
     <Compile Include="Services\ChatServices.cs" />
     <Compile Include="Services\CustomFormManager.cs" />
     <Compile Include="Services\FilePathManager.cs" />
+    <Compile Include="Services\NavigationControl.cs" />
     <Compile Include="Services\UserServices.cs" />
     <Compile Include="SignUpWindows.cs">
       <SubType>Form</SubType>
@@ -98,6 +99,12 @@
     </Compile>
     <Compile Include="UserControls\ChatWindows\ImageBlock.Designer.cs">
       <DependentUpon>ImageBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChatWindows\MediaTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChatWindows\MediaTab.Designer.cs">
+      <DependentUpon>MediaTab.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ChatWindows\VideoBlock.cs">
       <SubType>UserControl</SubType>
@@ -119,6 +126,18 @@
     </Compile>
     <Compile Include="UserControls\ChatWindows\MessageBlock.Designer.cs">
       <DependentUpon>MessageBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MediaWindows\MiniImageBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaWindows\MiniImageBlock.Designer.cs">
+      <DependentUpon>MiniImageBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MediaWindows\MiniVideoBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaWindows\MiniVideoBlock.Designer.cs">
+      <DependentUpon>MiniVideoBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RoundedButton.cs">
       <SubType>Component</SubType>
@@ -191,11 +210,20 @@
     <EmbeddedResource Include="UserControls\ChatWindows\ImageBlock.resx">
       <DependentUpon>ImageBlock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChatWindows\MediaTab.resx">
+      <DependentUpon>MediaTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ChatWindows\MessageBlock.resx">
       <DependentUpon>MessageBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ChatWindows\VideoBlock.resx">
       <DependentUpon>VideoBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MediaWindows\MiniImageBlock.resx">
+      <DependentUpon>MiniImageBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MediaWindows\MiniVideoBlock.resx">
+      <DependentUpon>MiniVideoBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\RoundedTb.resx">
       <DependentUpon>RoundedTb.cs</DependentUpon>
@@ -266,5 +294,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

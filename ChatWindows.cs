@@ -22,6 +22,8 @@ namespace BaiThucHanh1
         User loggedUser = new User();
         string currentChatUserId = "0";
         List<ChatContent> chatContents = new List<ChatContent>(); // List chứa nội dung chat với người dùng hiện tại
+        NavigationControl navigationControl;
+        MediaTab mediaTab;
 
         public ChatWindows(User user)
         {
@@ -37,7 +39,12 @@ namespace BaiThucHanh1
                 currentChatUserId = ((UserDisplay)userControl).Id;
                 ChatUserDisplay.SetUserInfo(currentChatUserId);
 
+
                 // Load nội dung chat giữa 2 người
+                navigationControl.Display(0);
+                ptbNavChat.BackColor = Color.SeaShell;
+                ptbNavMedia.BackColor = Color.White;
+
                 chatContents = ChatServices.LoadChatContent(loggedUser.Id, currentChatUserId);
                 ReloadChatContent(chatContents);
             }
@@ -84,12 +91,16 @@ namespace BaiThucHanh1
         private void ChatWindows_Load(object sender, EventArgs e)
         {
             LoadUsers();
-            // Thêm xử lý sự kiện Click cho mỗi Control trong FlowLayoutPanel
             foreach (Control control in flpFriendList.Controls)
             {
                 control.Click += UserControl_Click;
             }
             SetCurrentLoggedInUser();
+            mediaTab = new MediaTab(loggedUser.Id, currentChatUserId)
+            {
+                Dock = DockStyle.Fill
+            };
+            navigationControl = new NavigationControl(pnlTabChat, mediaTab);
 
             SetUpIcons();
             // Them su kien click cho moi icon
@@ -329,6 +340,54 @@ namespace BaiThucHanh1
                 flpChat.Controls.Add(videoBlock);
                 flpChat.AutoScrollPosition = new Point(0, flpChat.VerticalScroll.Maximum);
             }
+        }
+
+
+
+        private void ptbNavChat_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(0);
+            ptbNavChat.BackColor = Color.SeaShell;
+            ptbNavMedia.BackColor = Color.White;
+        }
+
+        private void ptbNavMedia_Click(object sender, EventArgs e)
+        {
+            mediaTab = new MediaTab(loggedUser.Id, currentChatUserId)
+            {
+                Dock = DockStyle.Fill
+            };
+
+            // get parent control of tabchat
+            Panel parentPanel = (Panel)pnlTabChat.Parent;
+            parentPanel.Controls.Add(mediaTab);
+
+            navigationControl = new NavigationControl(pnlTabChat, mediaTab);
+            navigationControl.Display(1);
+            ptbNavMedia.BackColor = Color.SeaShell;
+            ptbNavChat.BackColor = Color.White;
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            foreach (Control control in flpChat.Controls)
+            {
+                if (control is MessageBlock messageControl)
+                {
+                    messageControl.BackColor = Color.SeaShell;
+                    // Kiểm tra nội dung của tin nhắn
+                    if (messageControl.Message.Contains(tbSearch.Texts))
+                    {
+                        // Hiển thị tin nhắn hoặc thực hiện hành động khác
+                        messageControl.BackColor = Color.Yellow; // Ví dụ: làm sáng tin nhắn tìm thấy
+                    }
+                }
+            }
+        }
+
+        private void ptbSettings_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

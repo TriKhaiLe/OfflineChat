@@ -36,12 +36,11 @@
             this.LoggedInUserDisplay = new BaiThucHanh1.UserControls.UserDisplay();
             this.flpFriendList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlTabChat = new System.Windows.Forms.Panel();
             this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.roundedButton1 = new BaiThucHanh1.UserControls.RoundedButton();
-            this.roundedTb1 = new BaiThucHanh1.UserControls.RoundedTb();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new BaiThucHanh1.UserControls.RoundedTb();
             this.panelIcons = new System.Windows.Forms.Panel();
             this.ptbEmo8 = new BaiThucHanh1.UserControls.CircularPicturebox();
             this.ptbEmo7 = new BaiThucHanh1.UserControls.CircularPicturebox();
@@ -59,8 +58,8 @@
             this.tbMessage = new BaiThucHanh1.UserControls.RoundedTb();
             this.btnSend = new BaiThucHanh1.UserControls.RoundedButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.ptbNavMedia = new System.Windows.Forms.PictureBox();
+            this.ptbNavChat = new System.Windows.Forms.PictureBox();
             this.ChatUserDisplay = new BaiThucHanh1.UserControls.UserDisplay();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ptbExit = new System.Windows.Forms.PictureBox();
@@ -69,9 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbSettings)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.pnlTabChat.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.panelIcons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo7)).BeginInit();
@@ -87,8 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNavMedia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNavChat)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             this.panel6.SuspendLayout();
@@ -125,6 +123,7 @@
             this.ptbSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbSettings.TabIndex = 21;
             this.ptbSettings.TabStop = false;
+            this.ptbSettings.Click += new System.EventHandler(this.ptbSettings_Click);
             // 
             // panel1
             // 
@@ -171,7 +170,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.pnlTabChat);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(300, 0);
@@ -179,18 +178,18 @@
             this.panel3.Size = new System.Drawing.Size(900, 657);
             this.panel3.TabIndex = 17;
             // 
-            // panel7
+            // pnlTabChat
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel7.Controls.Add(this.flpChat);
-            this.panel7.Controls.Add(this.panel10);
-            this.panel7.Controls.Add(this.panelIcons);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 70);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(900, 587);
-            this.panel7.TabIndex = 16;
+            this.pnlTabChat.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlTabChat.Controls.Add(this.flpChat);
+            this.pnlTabChat.Controls.Add(this.panel10);
+            this.pnlTabChat.Controls.Add(this.panelIcons);
+            this.pnlTabChat.Controls.Add(this.panel8);
+            this.pnlTabChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTabChat.Location = new System.Drawing.Point(0, 70);
+            this.pnlTabChat.Name = "pnlTabChat";
+            this.pnlTabChat.Size = new System.Drawing.Size(900, 587);
+            this.pnlTabChat.TabIndex = 16;
             // 
             // flpChat
             // 
@@ -206,8 +205,7 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.SeaShell;
             this.panel10.Controls.Add(this.roundedButton1);
-            this.panel10.Controls.Add(this.roundedTb1);
-            this.panel10.Controls.Add(this.pictureBox13);
+            this.panel10.Controls.Add(this.tbSearch);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
@@ -231,37 +229,29 @@
             this.roundedButton1.TabIndex = 19;
             this.roundedButton1.TextColor = System.Drawing.Color.White;
             this.roundedButton1.UseVisualStyleBackColor = false;
+            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
             // 
-            // roundedTb1
+            // tbSearch
             // 
-            this.roundedTb1.BackColor = System.Drawing.SystemColors.Window;
-            this.roundedTb1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.roundedTb1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.roundedTb1.BorderRadius = 8;
-            this.roundedTb1.BorderSize = 1;
-            this.roundedTb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedTb1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.roundedTb1.Location = new System.Drawing.Point(362, 8);
-            this.roundedTb1.Margin = new System.Windows.Forms.Padding(4);
-            this.roundedTb1.Multiline = false;
-            this.roundedTb1.Name = "roundedTb1";
-            this.roundedTb1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.roundedTb1.PasswordChar = false;
-            this.roundedTb1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.roundedTb1.PlaceholderText = "Tìm kiếm...";
-            this.roundedTb1.Size = new System.Drawing.Size(250, 35);
-            this.roundedTb1.TabIndex = 4;
-            this.roundedTb1.Texts = "";
-            this.roundedTb1.UnderlinedStyle = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox13.Location = new System.Drawing.Point(870, 0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(30, 50);
-            this.pictureBox13.TabIndex = 2;
-            this.pictureBox13.TabStop = false;
+            this.tbSearch.BackColor = System.Drawing.SystemColors.Window;
+            this.tbSearch.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbSearch.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.tbSearch.BorderRadius = 8;
+            this.tbSearch.BorderSize = 1;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbSearch.Location = new System.Drawing.Point(362, 8);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSearch.Multiline = false;
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.tbSearch.PasswordChar = false;
+            this.tbSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbSearch.PlaceholderText = "Tìm kiếm...";
+            this.tbSearch.Size = new System.Drawing.Size(250, 35);
+            this.tbSearch.TabIndex = 4;
+            this.tbSearch.Texts = "";
+            this.tbSearch.UnderlinedStyle = false;
             // 
             // panelIcons
             // 
@@ -544,8 +534,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Window;
-            this.panel4.Controls.Add(this.pictureBox11);
-            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Controls.Add(this.ptbNavMedia);
+            this.panel4.Controls.Add(this.ptbNavChat);
             this.panel4.Controls.Add(this.ChatUserDisplay);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
@@ -553,33 +543,35 @@
             this.panel4.Size = new System.Drawing.Size(900, 70);
             this.panel4.TabIndex = 15;
             // 
-            // pictureBox11
+            // ptbNavMedia
             // 
-            this.pictureBox11.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(762, 0);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(30);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox11.Size = new System.Drawing.Size(68, 70);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 20;
-            this.pictureBox11.TabStop = false;
+            this.ptbNavMedia.BackColor = System.Drawing.SystemColors.Window;
+            this.ptbNavMedia.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbNavMedia.Image = ((System.Drawing.Image)(resources.GetObject("ptbNavMedia.Image")));
+            this.ptbNavMedia.Location = new System.Drawing.Point(762, 0);
+            this.ptbNavMedia.Margin = new System.Windows.Forms.Padding(30);
+            this.ptbNavMedia.Name = "ptbNavMedia";
+            this.ptbNavMedia.Padding = new System.Windows.Forms.Padding(10);
+            this.ptbNavMedia.Size = new System.Drawing.Size(68, 70);
+            this.ptbNavMedia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbNavMedia.TabIndex = 20;
+            this.ptbNavMedia.TabStop = false;
+            this.ptbNavMedia.Click += new System.EventHandler(this.ptbNavMedia_Click);
             // 
-            // pictureBox4
+            // ptbNavChat
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.SeaShell;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(830, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(30);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Padding = new System.Windows.Forms.Padding(10);
-            this.pictureBox4.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
+            this.ptbNavChat.BackColor = System.Drawing.Color.SeaShell;
+            this.ptbNavChat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ptbNavChat.Image = ((System.Drawing.Image)(resources.GetObject("ptbNavChat.Image")));
+            this.ptbNavChat.Location = new System.Drawing.Point(830, 0);
+            this.ptbNavChat.Margin = new System.Windows.Forms.Padding(30);
+            this.ptbNavChat.Name = "ptbNavChat";
+            this.ptbNavChat.Padding = new System.Windows.Forms.Padding(10);
+            this.ptbNavChat.Size = new System.Drawing.Size(70, 70);
+            this.ptbNavChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbNavChat.TabIndex = 19;
+            this.ptbNavChat.TabStop = false;
+            this.ptbNavChat.Click += new System.EventHandler(this.ptbNavChat_Click);
             // 
             // ChatUserDisplay
             // 
@@ -644,9 +636,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
+            this.pnlTabChat.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.panelIcons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbEmo7)).EndInit();
@@ -662,8 +653,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptbBrowseImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNavMedia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbNavChat)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -680,19 +671,18 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox ptbExit;
         private System.Windows.Forms.FlowLayoutPanel flpFriendList;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlTabChat;
         private System.Windows.Forms.Panel panelIcons;
         private System.Windows.Forms.Panel panel8;
         private UserControls.RoundedButton btnSend;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox ptbNavMedia;
+        private System.Windows.Forms.PictureBox ptbNavChat;
         private System.Windows.Forms.Panel panel1;
         private UserControls.UserDisplay LoggedInUserDisplay;
         private UserControls.RoundedTb tbMessage;
         private System.Windows.Forms.FlowLayoutPanel flpChat;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private UserControls.RoundedTb roundedTb1;
+        private UserControls.RoundedTb tbSearch;
         private UserControls.CircularPicturebox ptbEmo6;
         private UserControls.CircularPicturebox ptbEmo5;
         private UserControls.CircularPicturebox ptbEmo4;
